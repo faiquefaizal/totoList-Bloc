@@ -36,8 +36,10 @@ class NotesBloc extends Bloc<NotesEvent, NotesState> {
   }
 
   Future<void> _editNotes(EditNotes event, Emitter<NotesState> emit) async {
-    await apiService.editNote(event.id, event.title, event.discription);
+    emit(NoteLoading());
+
     try {
+      await apiService.editNote(event.id, event.title, event.discription);
       final notes = await apiService.getNoteDetails(event.id);
       emit(NoteLoaded(note: notes));
     } catch (e) {
@@ -46,8 +48,9 @@ class NotesBloc extends Bloc<NotesEvent, NotesState> {
   }
 
   Future<void> _deleteNotes(Deletenotes event, Emitter<NotesState> emit) async {
-    await apiService.deleteNote(event.id);
+    emit(NoteLoading());
     try {
+      await apiService.deleteNote(event.id);
       final notes = await apiService.fetchNotes();
       emit(NotesLoaded(notes: notes));
     } catch (e) {

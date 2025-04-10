@@ -92,13 +92,13 @@ class HomeScreen extends StatelessWidget {
                                     overflow: TextOverflow.ellipsis,
                                   ),
                                   const SizedBox(height: 8),
-                                  Text(
-                                    "Created at: ", // Assuming createdAt exists
-                                    style: const TextStyle(
-                                      fontSize: 12,
-                                      color: Colors.grey,
-                                    ),
-                                  ),
+                                  // Text(
+                                  //   "Created at: ${note.createdBy.toLocal().toString().substring(0, 16)}", // Assuming createdAt exists
+                                  //   style: const TextStyle(
+                                  //     fontSize: 12,
+                                  //     color: Colors.grey,
+                                  //   ),
+                                  // ),
                                 ],
                               ),
                             ),
@@ -114,6 +114,7 @@ class HomeScreen extends StatelessWidget {
                                           context.read<NotesBloc>().add(
                                             Deletenotes(id: note.id),
                                           );
+                                          Navigator.pop(context);
                                         },
                                       ),
                                 ),

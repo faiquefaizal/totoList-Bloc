@@ -77,9 +77,7 @@ class ShowDeleteAlertDialog extends StatelessWidget {
           child: const Text("Cancel"),
         ),
         ElevatedButton(
-          onPressed: () async {
-            await onpressed;
-          },
+          onPressed: onpressed,
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.deepPurple,
             foregroundColor: Colors.white,
