@@ -33,7 +33,7 @@ class HomeScreen extends StatelessWidget {
           } else if (snapshot is NotesError) {
             return Center(
               child: Text("Error: ${snapshot.error}"),
-            ); // ✅ Error state
+            ); 
           } else if (snapshot is NotesLoaded) {
             final notes = snapshot.notes;
             if (notes.isEmpty)
