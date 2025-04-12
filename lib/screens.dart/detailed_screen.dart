@@ -64,7 +64,7 @@ class NoteDetailScreen extends StatelessWidget {
                       ),
                       const Divider(height: 40, color: Colors.grey),
 
-                      // Title Section
+                      
                       Text(
                         'Title',
                         style: TextStyle(
@@ -83,7 +83,7 @@ class NoteDetailScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 24),
 
-                      // Description Section
+                   
                       Text(
                         'Description',
                         style: TextStyle(
@@ -105,7 +105,7 @@ class NoteDetailScreen extends StatelessWidget {
                         children: [
                           TextButton(
                             onPressed: () {
-                              // Cancel/Back action
+                            
                               Navigator.pop(context);
                             },
                             style: TextButton.styleFrom(
